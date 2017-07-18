@@ -1,0 +1,155 @@
+
+.numeradores{
+left: 12.5%;
+top: 40%;
+}
+.numeradores, .denominadores{
+position: absolute;
+width: 60%;
+height: 15%;
+
+z-index: 3;
+ 
+}
+
+.denominadores{
+  left: 12.5%;
+  top: 55.5%;
+}
+
+.lineaFraccion{
+	position: absolute;
+	width: 60%;
+	height: 5%;
+ 
+	 z-index: 4;
+	 top: 54.8%;
+}
+
+
+input{
+	position: absolute;
+	width: 10%;
+	height: 80%;
+	z-index: 3;
+	-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border-radius: 15px 15px 15px 15px;
+
+box-shadow: 1px 5px 8px #828080; 
+-webkit-border-radius: 7px;
+-moz-box-shadow: 1px 5px 8px #828080;  
+text-align: center;
+top: 5%;
+border: 0.1em solid #000;
+}
+
+#txt1{
+	left: 0%;
+}
+
+#txt3{
+	left: 23%;
+}
+#txt2{
+	left: 0%;
+}
+#txt4{
+	left: 23%;
+}
+#txt5{
+	left: 63%;
+}
+#txt6{
+	left: 50%;
+}
+
+#txt7{
+	left: 75%;
+}
+#txt8{
+	left: 110%;
+	 
+}
+	
+
+.linea{
+	background: #000;
+	width: 15%;
+	height: 20%;
+	top: 20%;
+}
+
+#l1{
+position: absolute;
+left: 18%;	
+top: 5%;
+}
+
+#l2{
+position: absolute;
+left: 40%;
+top: 5%;	
+}
+#l3{
+position: absolute;
+left: 68%;
+top: 5%;
+width: 42%;	
+}
+#l4{
+position: absolute;
+left: 127%;
+top: 5%;
+width: 16%;	
+}
+
+#txt9{
+	left: 110%;
+}
+
+.simbolo{
+ 
+	width: 3%;
+	height: 10%;
+	z-index: 4;
+	font-weight: bold;
+	top: 49.3%;
+	/*border: 2px solid #000;*/
+}
+
+#m1{
+	position: absolute;
+ left: 21%;	
+}
+
+#m2{
+position: absolute;
+top: 42%;
+left: 52%;
+
+}
+#m3{
+position: absolute;
+left: 70.5%;	
+}
+
+#m4{
+ position: absolute;
+ left: 36%;	
+}
+#verificar{
+	position: absolute;
+	left: 40%;
+	top: 85%;
+	z-index: 5;
+	width: 20%;
+	height: 10%;
+	cursor: pointer;
+}
+.imv{
+	width: 100%;
+	height: 100%;
+}
+
+

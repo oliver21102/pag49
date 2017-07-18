@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+ <script type="text/javascript" src="../Funciones/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="../Funciones/jquery.min.js"></script>
+ <script type="text/javascript" src="../Funciones/jquery-ui.min.js"></script>
+ <script type="text/javascript" src="../Funciones/jquery.ui.touch-punch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../estilos/PlantillaP.css">
+<script type="text/javascript" href="../Funciones/funcionesP.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="css/estilo.css"> -->
+
+
+<style type="text/css">
+
+
+.numeradores{
+left:3%;
+top: 40%;
+}
+.numeradores, .denominadores{
+position: absolute;
+width: 60%;
+height: 15%;
+z-index: 3;
+}
+
+.denominadores{
+  left: 3%;
+  top: 55.5%;
+}
+
+.lineaFraccion{
+  position: absolute;
+  width: 60%;
+  height: 5%;
+   z-index: 4;
+   top: 54.8%;
+}
+
+
+input{
+  position: absolute;
+  width: 10%;
+  height: 80%;
+  z-index: 3;
+  -moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border-radius: 15px 15px 15px 15px;
+
+box-shadow: 1px 5px 8px #828080; 
+-webkit-border-radius: 7px;
+-moz-box-shadow: 1px 5px 8px #828080;  
+text-align: center;
+top: 5%;
+border: 0.1em solid #000;
+}
+
+#txt1, #txt2{
+  left: 0%;
+}
+
+#txt3, #txt4{
+  left: 23%;
+}
+ 
+#txt5, #txt6{
+  left: 45%;
+}
+
+#txt8{
+  left: 70%;   
+}
+
+#txt9, #txt7{
+  left: 90%;
+}
+
+#txt10{
+  left: 110%;
+}
+  
+
+
+#txt11,#txt12 {
+ left: 140%;
+}
+
+ 
+
+.linea{
+  background: #000;
+  width: 15%;
+  height: 20%;
+  top: 20%;
+}
+
+#l1{
+position: absolute;
+left: 2.5%;  
+top: 5%;
+}
+
+#l2{
+position: absolute;
+left: 25%;
+top: 5%;  
+}
+#l3{
+position: absolute;
+left: 47%;
+top: 5%; 
+}
+#l4{
+position: absolute;
+left: 73%;
+top: 5%;
+width: 53.5%; 
+}
+#l5{
+position: absolute;
+left: 142%;
+top: 5%;
+width: 16%; 
+}
+
+ 
+.simbolo{
+  width: 3%;
+  height: 10%;
+  z-index: 4;
+  font-weight: bold;
+  top: 49.2%;
+  /*border: 2px solid #000;*/
+}
+
+#m1{
+  position: absolute;
+ left: 11.5%; 
+}
+
+#m2{
+position: absolute;
+left: 25%;
+}
+
+#m3{
+position: absolute;
+left: 39%;  
+}
+
+#m4{
+ position: absolute;
+ left: 53%;
+ top: 40%; 
+ 
+}
+#m5{
+  position: absolute;
+ left: 65%;
+ top: 40%; 
+}
+#m6{
+    position: absolute;
+ left: 79%; 
+}
+#verificar{
+  position: absolute;
+  left: 40%;
+  top: 85%;
+  z-index: 5;
+  width: 20%;
+  height: 10%;
+  cursor: pointer;
+}
+.imv{
+  width: 100%;
+  height: 100%;
+}
+
+
+</style>
+
+
+
+</head>
+<body  onload="inicio()" onresize="ajustar()">
+
+ <img src="imagenes/fondo.jpg" id="fondo">
+
+<div class="numeradores">
+	<input type="text" name=""  value="5"  id="txt1" readonly > 
+  <input type="text" name=""  value="7" id="txt3" readonly> 
+	<input type="text" name=""  value="9" id="txt5" readonly> 
+	<input type="text" name=""   id="txt8"  maxlength="1"  onkeypress="soloNumero(this)"> 
+	<input type="text" name=""    id="txt9"  maxlength="1" onkeypress="soloNumero(this)"> 
+  <input type="text" name=""    id="txt10" maxlength="2" onkeypress="soloNumero(this)"> 
+  <input type="text" name=""    id="txt11" maxlength="2" onkeypress="soloNumero(this)"> 
+ 
+</div>
+
+<div class="simbolo" id="m1">+</div>
+<div class="simbolo" id="m2">+</div>
+<div class="simbolo" id="m3">=</div>
+<div class="simbolo" id="m4">+</div>
+<div class="simbolo" id="m5">+</div>
+<div class="simbolo" id="m6">=</div>
+
+<div class="lineaFraccion">
+  <div class="linea" id="l1"></div>
+  <div class="linea" id="l2"></div>
+  <div class="linea" id="l3"></div><!------>
+  <div class="linea" id="l4"></div><!------>
+  <div class="linea" id="l5"></div><!------>
+</div>
+
+<div class="denominadores">
+	<input type="text" name=""  value="5"  id="txt2" readonly > 
+  <input type="text" name=""  value="5" id="txt4" readonly> 
+	<input type="text" name=""  value="5" id="txt6" readonly> 
+
+  <input type="text" name=""   id="txt7"  maxlength="2" onkeypress="soloNumero(this)">
+	<input type="text" name=""   id="txt12"  maxlength="2" onkeypress="soloNumero(this)">
+ 
+</div>
+
+
+ <div id="verificar"><img src="imagenes/verificar.png"  class="imv"></div>
+ <a href="dos.html"> <img src="imagenes/flecha.png" id="flecha"> </a>
+ <!-- <a href="pag49.html"><img src="imagenes/flechaA.png" id="flechaAtras" > </a> -->
+
+
+ <script type="text/javascript">
+	
+var verde="#08A635";
+var rojo="#FF0000";
+var blanco="#ffffff";
+
+
+var respuesta= new Array();
+var respuesta2= new Array();
+
+respuesta.push(14);
+respuesta.push(4);
+
+respuesta2.push(7);
+respuesta2.push(2);
+
+var proceso= new Array();
+proceso.push(5);
+proceso.push(9);
+proceso.push(4);
+
+
+var cajasP = new Array();
+cajasP.push("txt6");
+cajasP.push("txt7");
+cajasP.push("txt5");
+
+var cajasR= new Array();
+cajasR.push("txt8");
+cajasR.push("txt9");
+
+
+
+function inicio(){
+  ajustar();
+}
+
+function ajustar(){
+   var alto=$(window).height();
+   var ancho=$(window).width();
+   ancho=(ancho+alto)/2;
+   var tamanio= ancho/45;
+  $("input").css("fontSize",(tamanio*2.6)+"px");
+  $(".simbolo").css("fontSize",(tamanio*3.6)+"px");
+}
+
+ 
+function soloNumero(ob){
+  var ingreso=false;
+  var caracter=event.keyCode;
+  var letra= String.fromCharCode(caracter);
+ //$(ob).val("");
+
+ if ((caracter >=48) && (caracter<=57)){ 
+ 
+ }else{
+  return event.returnValue = false;
+ }
+
+return ;
+}
+
+
+$("#verificar").on("click",fverificar);
+
+function fverificar(event){
+   var pro= verificarProceso(proceso,cajasP);
+   var resp= verificarRespuesta(respuesta,respuesta2,cajasR);
+  
+    if(resp&&pro){
+    	sonidoBien();
+      correcto();
+    }
+
+}
+
+
+
+function correcto(){
+	   ocultarVerificar();
+       mostrarFlecha();
+}
+
+
+function ocultarVerificar(){
+ $("#verificar").css("visibility","hidden");
+}
+
+
+function mostrarFlecha(){
+$("#flecha").css("visibility","visible");
+}
+
+function verificarProceso(ar1,ar2){
+	var r=true;
+   for(var i=0; i<ar1.length; i++){
+   	     //console.log(ar1[i]+"  "+valor(ar2[i]));
+   	      if(ar1[i]==valor(ar2[i])){
+                pintarCaja(ar2[i],verde);
+   	      }else{
+   	      	pintarCaja(ar2[i],rojo);
+   	      	 r=false;
+   	      }
+
+   }
+   return r;
+}
+
+function valor(obj){
+ return parseInt($("#"+obj).val());
+}
+
+function verificarRespuesta(ar1,ar3,ar2){
+	var r=true;
+  for(var i=0; i<ar1.length; i++){
+  	       console.log(ar1[i]+" "+valor(ar2[i]));
+   	      if(ar1[i]==valor(ar2[i]) || ar3[i]==valor(ar2[i])){
+                pintarCaja(ar2[i],verde);
+   	      }else{
+   	      	pintarCaja(ar2[i],rojo);
+   	      	r=false;
+   	      }
+   }
+ return r;
+}
+
+
+
+
+function pintarCaja(obj,color){
+	$("#"+obj).css("background",color);
+	 //  console.log(color+"  "+verde);
+	  if(color==verde){
+	  	console.log("paso");
+       deshabilitarCaja(obj);
+	  }
+}
+
+
+function deshabilitarCaja(caja){
+	$("#"+caja).css("color",blanco);
+	$("#"+caja).prop("disabled",true);
+
+}
+
+
+</script>
+
+</body>
+</html>
